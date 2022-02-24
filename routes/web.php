@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Homecontroller;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,5 +22,7 @@ Route::get('/dashboard',[HomeController::class, 'index'] );
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');*/
+
+Route::get('/list',[HomeController::class, 'listar_usuarios'] );
 
 require __DIR__.'/auth.php';
