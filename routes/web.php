@@ -26,4 +26,7 @@ Route::get('/dashboard',[HomeController::class, 'index'] );
 Route::get('/user',[HomeController::class, 'listar_usuarios'] );
 Route::get('/eliminar-usuario/{id}',[HomeController::class, 'delete'] );
 
+Route::get('/actualizar-usuario/{id}',[HomeController::class, 'update_user'] );
+Route::post('/actualizarusuario/{id}',[HomeController::class, 'edit'] );
+
 require __DIR__.'/auth.php';

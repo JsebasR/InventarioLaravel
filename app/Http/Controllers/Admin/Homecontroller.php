@@ -25,4 +25,21 @@ class Homecontroller extends Controller
         return redirect()->back()->with ('mensaje','El Usuario Ha Sido Eliminado');
 
     }
+
+    public function edit($id, Request $request){
+        $usuario = User::find($id);
+       
+        $usuario->name = $request->name;
+        $usuario->email = $request->email;
+
+        $usuario->save();
+        return redirect()->back()->with('mensaje', 'El usuario ha sido Actualizado');
+        
+    }
+
+    public function update_user($id){
+        $usuario = User::find($id);
+        return view('admin.updateuser', compact('usuario'));
+    }
+
 }
