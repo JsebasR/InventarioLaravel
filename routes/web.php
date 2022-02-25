@@ -23,6 +23,7 @@ Route::get('/dashboard',[HomeController::class, 'index'] );
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');*/
 
-Route::get('/list',[HomeController::class, 'listar_usuarios'] );
+Route::get('/user',[HomeController::class, 'listar_usuarios'] );
+Route::get('/eliminar-usuario/{id}',[HomeController::class, 'delete'] );
 
 require __DIR__.'/auth.php';
